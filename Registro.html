@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fde2e4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ffafcc;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ingresa tu nombre</h2>
+        <input id="nombreInput" type="text" placeholder="Tu nombre">
+        <button onclick="guardarNombre()">Entrar</button>
+    </div>
+
+    <script>
+        function guardarNombre() {
+            let nombre = document.getElementById("nombreInput").value.trim();
+            if (nombre) {
+                sessionStorage.setItem("nombre", nombre);
+                window.location.href = "Cartas.html";
+            } else {
+                alert("Por favor, ingresa tu nombre.");
+            }
+        }
+    </script>
+</body>
+</html>
